@@ -1,0 +1,26 @@
+@use 'vars' as v;
+
+@mixin flex($direction:null,$justify:null, $align:null) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin pos_abs($top,$left:null){
+    position: absolute;
+    top:$top;
+    left:$left;
+}
+@mixin pos_center($percent){
+    // position: relative;
+    left:$percent;
+    transform: translateX(-1*$percent);
+}
+
+// @function rem($px) {
+//     @return $px / 16 * 1rem;
+// }
+
+// @function line-height($px) {
+//     @return ($px / 1.8) / 10;
+// }
