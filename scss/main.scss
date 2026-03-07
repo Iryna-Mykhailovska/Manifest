@@ -1,13 +1,20 @@
-@use 'fonts';
 @use 'vars' as v;
 @use 'mixins' as m;
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: v.$main_color;
 }
-ol,ul{
+
+ol,
+ul {
     list-style: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 .container {
@@ -15,12 +22,15 @@ ol,ul{
     margin: 0 auto;
 
 }
-.flex_container{
-@include m.flex(row,space-between,center);
+
+.flex_container {
+    @include m.flex(row, space-between, center);
 }
-.header{
+
+.header {
     padding: 44px 0;
 }
+
 .hero {
     background: url(../assets/img/bg-image.png) center / cover no-repeat;
     width: 100%;
@@ -28,11 +38,71 @@ ol,ul{
     padding-top: 100px;
 }
 
-.title_1 {
-    max-width: 770px;
+.title {
+    font-family: v.$main_font_family;
     font-size: 48px;
-    font-family: 'Red Hat Display';
-    font-weight: 600;
     line-height: 1.33;
-    letter-spacing: 0.05;
+    letter-spacing: 5%;
+    color: v.$color-title;
+
+    &_1 {
+        max-width: 770px;
+        font-weight: 600;
+    }
+
+    &_2 {
+        font-weight: 400;
+    }
+
+    &_3 {
+
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 1.66;
+        letter-spacing: 10%;
+
+    }
+
+    &_4 {
+        font-weight: 500;
+        font-size: 23px;
+        // line-height: 1.66;
+        // letter-spacing: 0.1;
+    }
+}
+
+.article {
+    @include m.flex(row, space-between, center);
+
+    &_revers {
+        flex-direction: row-reverse;
+    }
+
+    &_subtitle {
+        font-family: 'Lato';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.66;
+        letter-spacing: 0.1;
+
+
+    }
+
+    &_text {
+        font-family: 'Lato';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 166%;
+        letter-spacing: 5%;
+
+    }
+}
+
+.posts {
+    &_header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+
 }

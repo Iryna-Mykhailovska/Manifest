@@ -1,1 +1,5 @@
-$container-width:1170px;
+@use 'fonts';
+$container-width: 1170px;
+$main_font_family: 'Red Hat Display';
+$main_color:#7B7B7B;
+$color-title:#000;

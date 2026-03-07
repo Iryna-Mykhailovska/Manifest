@@ -10,10 +10,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #7B7B7B;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 .container {
@@ -39,11 +45,57 @@ ol, ul {
   padding-top: 100px;
 }
 
+.title {
+  font-family: "Red Hat Display";
+  font-size: 48px;
+  line-height: 1.33;
+  letter-spacing: 5%;
+  color: #000;
+}
 .title_1 {
   max-width: 770px;
-  font-size: 48px;
-  font-family: "Red Hat Display";
   font-weight: 600;
-  line-height: 1.33;
-  letter-spacing: 0.05;
+}
+.title_2 {
+  font-weight: 400;
+}
+.title_3 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.66;
+  letter-spacing: 10%;
+}
+.title_4 {
+  font-weight: 500;
+  font-size: 23px;
+}
+
+.article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.article_revers {
+  flex-direction: row-reverse;
+}
+.article_subtitle {
+  font-family: "Lato";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.66;
+  letter-spacing: 0.1;
+}
+.article_text {
+  font-family: "Lato";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 166%;
+  letter-spacing: 5%;
+}
+
+.posts_header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
 }/*# sourceMappingURL=main.css.map */
