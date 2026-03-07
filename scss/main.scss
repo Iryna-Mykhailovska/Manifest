@@ -30,7 +30,10 @@ a {
 .header {
     padding: 44px 0;
 }
-
+.menu{
+    @include m.flex(row,space-between,center);
+    gap: 42px;
+}
 .hero {
     background: url(../assets/img/bg-image.png) center / cover no-repeat;
     width: 100%;
@@ -73,7 +76,8 @@ a {
 
 .article {
     @include m.flex(row, space-between, center);
-
+    gap: 30px;
+padding: 50px 0;
     &_revers {
         flex-direction: row-reverse;
     }

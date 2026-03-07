@@ -38,6 +38,14 @@ a {
   padding: 44px 0;
 }
 
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 42px;
+}
+
 .hero {
   background: url(../assets/img/bg-image.png) center/cover no-repeat;
   width: 100%;
@@ -75,6 +83,8 @@ a {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 30px;
+  padding: 50px 0;
 }
 .article_revers {
   flex-direction: row-reverse;
