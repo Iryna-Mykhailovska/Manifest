@@ -85,10 +85,13 @@ a {
 .article {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: 30px;
   padding: 50px 0;
+}
+.article_descr {
+  width: 450px;
 }
 .article_revers {
   flex-direction: row-reverse;
@@ -117,6 +120,8 @@ a {
 .btn {
   background-color: #565656;
   padding: 9px 45px;
+  margin: 50px auto 0 auto;
+  display: block;
   border: none;
   color: #fff;
   font-family: "Lato";
