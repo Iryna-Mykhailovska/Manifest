@@ -1,6 +1,10 @@
 @use 'fonts';
 @use 'vars' as v;
 @use 'mixins' as m;
+// @font-face {
+//     font-family: 'Lato';
+//     src: url('/assets/') format('woff'), url('/assets/fonts/Lato/Lato-Regular.woff2') format('woff2');
+// }
 
 * {
     margin: 0;
