@@ -86,7 +86,11 @@
                 <h2 class="title title_2">Blog</h2>
                 <article class="article">
                     <div class="article_img">
-                        <img src="./assets/img/desktop/image_desktop.webp" alt="">
+                        <picture>
+                            <source srcset="./assets/img/mobile/image_mobile.png" media="(max-width: 576px)">
+                            <source srcset="./assets/img/tablet/image_tablet.webp" media="(max-width: 768px)">
+                            <img src="./assets/img/desktop/image_desktop.webp" alt="">
+                        </picture>
                     </div>
                     <div class="article_descr">
                         <h5 class="article_subtitle">Technology, Interface Design</h5>
@@ -242,7 +246,7 @@
     </main>
     <footer class="footer">
         <div class="container">
-            <div class="flex_container">
+            <div class="footer_container">
                 <div class="footer_col">
                     <h2 class="title title_2">Need a project?</h2>
                     <div class="footer_contacts">

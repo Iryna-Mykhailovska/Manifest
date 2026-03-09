@@ -75,7 +75,7 @@ a {
 
     @media screen and (max-width:768px) {
         position: absolute;
-        right: -100%;
+        left: -100%;
         top: 65px;
         opacity: 0;
         flex-direction: column;
@@ -135,7 +135,7 @@ a {
     @media screen and (max-width:768px) {
         &:checked~.menu {
             opacity: 1;
-            right: 0;
+            left: 0;
         }
 
         &:checked~.burger__img {
@@ -192,12 +192,14 @@ a {
 
     @media screen and (max-width:768px) {
         background: url(../assets/img/tablet/bg-image_tablet.png) center / cover no-repeat;
+        // width: 100%;
         height: 320px;
         padding-top: 30px;
     }
 
     @media screen and (max-width:576px) {
         background: url(../assets/img/mobile/bg-image_mobile.png) center / cover no-repeat;
+        // width: 100%;
         height: 500px;
         padding-top: 70px;
     }
@@ -355,10 +357,23 @@ section {
     padding: 70px 0;
     color: v.$color-title;
 
+    &_container {
+        @include m.flex(row, space-between, center);
+
+        @media screen and (max-width: 768px) {
+            @include m.flex(column, space-between, center);
+            gap: 40px;
+        }
+    }
+
     &_text {
         text-align: center;
         margin-top: 20px;
         color: v.$color-title;
+
+        @media screen and (max-width: 768px) {
+            margin-top: 40px;
+        }
     }
 
     &_col {}
@@ -374,6 +389,9 @@ section {
             color: v.$color-title;
         }
 
+        @media screen and (max-width: 768px) {
+            align-items: center;
+        }
     }
 }
 
