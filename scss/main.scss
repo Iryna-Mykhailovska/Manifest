@@ -296,6 +296,7 @@ section {
 
 
 .post {
+    max-width: 50%;
     &_info {
         @include m.flex(row, space-between, center);
         padding: 25px 0;

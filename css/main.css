@@ -300,6 +300,9 @@ section {
   gap: 20px;
 }
 
+.post {
+  max-width: 50%;
+}
 .post_info {
   display: flex;
   flex-direction: row;
