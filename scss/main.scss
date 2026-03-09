@@ -8,9 +8,15 @@
     color: v.$main_color;
 }
 
+html,
+body {
+    font-size: v.$main_font_size;
+}
+
 ol,
 ul {
     list-style: none;
+
 }
 
 a {
@@ -21,72 +27,205 @@ a {
     max-width: v.$container-width;
     margin: 0 auto;
 
+    @media screen and (max-width:768px) {
+        max-width: v.$container-width_tablet;
+
+    }
+
+    @media screen and (max-width:576px) {
+        max-width: v.$container-width_mobile;
+
+    }
+
 }
 
 .flex_container {
-    @include m.flex(row, space-between, center);
+    @include m.flex(row, space-between, flex-start);
+    gap: 30px;
 }
 
 .header {
     padding: 44px 0;
+
+    @media screen and (max-width:768px) {
+        padding: 23px 0;
+
+    }
+}
+
+.nav {
+    flex-grow: 1;
+
+    @media screen and (max-width:768px) {
+        flex-grow: 0;
+        order: 2;
+    }
+
+    &-burger {}
+
+    &__img {}
+}
+
+.burger {
+    display: none;
+
+    @media screen and (max-width:768px) {
+        &:checked~.menu {
+            opacity: 1;
+        }
+    }
+
+    &__img {
+        display: none;
+        cursor: pointer;
+
+        @media screen and (max-width:768px) {
+            display: inline-block;
+            position: relative;
+            top: -3px;
+            width: 34px;
+            opacity: 0;
+            height: 2px;
+            background-color: #524b4b;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: #524b4b;
+                top: 10px;
+            }
+
+            &::after {
+                top: -10px;
+            }
+
+        }
+    }
 }
 
 .menu {
-    @include m.flex(row, space-between, center);
-    gap: 42px;
+    @include m.flex(row, flex-end, center);
+    gap: 2.9vw;
+    padding: 0 30px;
+
+    @media screen and (max-width:768px) {
+        position: absolute;
+        right: 0;
+        top: 80px;
+        opacity: 0;
+        @include m.flex(column, flex-end, center);
+        background-color: #d02e2e;
+
+
+    }
+
+    &__item {}
+
+    &__link {
+        font-family: 'Lato';
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 30%;
+        font-weight: 400;
+        color: v.$color-title;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: -10px;
+            transform: translateX(-50%);
+            width: 0;
+            height: 1px;
+            background-color: #000;
+            opacity: 0;
+            transition: all 0.4s;
+        }
+
+        &:hover {
+            &::after {
+                opacity: 1;
+                width: 75%;
+                left: 50%;
+            }
+        }
+    }
+
+
 }
 
 .hero {
-    background: url(../assets/img/bg-image.png) center / cover no-repeat;
+    background: url(../assets/img/desktop/bg-image_desktop.png) center / cover no-repeat;
     width: 100%;
     height: 600px;
     padding-top: 100px;
+
+    @media screen and (max-width:768px) {
+        background: url(../assets/img/tablet/bg-image_tablet.png) center / cover no-repeat;
+        height: 320px;
+        padding-top: 30px;
+    }
+
+    @media screen and (max-width:576px) {
+        background: url(../assets/img/mobile/bg-image_mobile.png) center / cover no-repeat;
+        height: 500px;
+        padding-top: 70px;
+    }
 }
 
-.main {
-    padding: 90px 0;
+section {
+    padding: 45px 0;
 }
 
 .title {
     font-family: v.$main_font_family;
-    font-size: 48px;
-    line-height: 1.33;
-    letter-spacing: 5%;
     color: v.$color-title;
 
     &_1 {
+        @include m.font_title(3rem, 1.33, 600, 5%);
         max-width: 770px;
-        font-weight: 600;
+
+        @media screen and (max-width:768px) {
+            font-size: 2.25rem;
+        }
+
+        @media screen and (max-width:576px) {
+            font-size: 1.875rem;
+        }
     }
 
     &_2 {
-        font-weight: 400;
+        @include m.font_title(3rem, 1.33, 400, 5%);
+        //48
     }
 
     &_3 {
-
-        font-weight: 600;
-        font-size: 28px;
-        line-height: 1.66;
-        letter-spacing: 10%;
-
+        @include m.font_title(1.75rem, 1.66, 600, 10%);
+        //28
     }
 
     &_4 {
-        font-weight: 500;
-        font-size: 23px;
-        // line-height: 1.66;
-        // letter-spacing: 0.1;
+        @include m.font_title(1.4375rem, 1.66, 500, 10%);
+        //23
+        margin-bottom: 15px;
     }
+}
+
+.blog {
+    padding-top: 90px;
 }
 
 .article {
     @include m.flex(row, flex-start, center);
     gap: 30px;
-    padding: 50px 0;
+    padding-top: 50px;
 
     &_descr {
-        width: 450px;
+        max-width: 450px;
     }
 
     &_revers {
@@ -98,32 +237,49 @@ a {
         font-weight: 400;
         font-size: 16px;
         line-height: 1.66;
-        letter-spacing: 0.1;
+        letter-spacing: 10%;
+        margin-bottom: 30px;
+    }
 
+    &_date {
+        font-family: 'Lato';
+        @include m.font_title(1rem, 1.66, 400, 10%);
 
     }
 
     &_text {
         font-family: 'Lato';
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 166%;
-        letter-spacing: 5%;
-
+        @include m.font_title(1rem, 1.66, 400, 5%);
+        color: v.$color_text;
+        margin-top: 50px;
     }
 }
 
-.posts {
-    &_header {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
+.heading {
+    @include m.flex(row, space-between, center);
+    margin-bottom: 50px;
+}
+
+.post {
+    &_info {
+        @include m.flex(row, space-between, center);
+        padding: 25px 0;
+        font-family: v.$second_font_family;
+        @include m.font_title(0.75rem, 1.66, 400, 10%);
+        color: v.$main_color;
+
+    }
+
+    &_text {
+        font-family: v.$second_font_family;
+        @include m.font_title(1rem, 1.66, 400, 5%);
+        color: v.$color_text;
     }
 
 }
 
 .btn {
-    background-color: #565656;
+    background-color: v.$color_text;
     padding: 9px 45px;
     margin: 50px auto 0 auto;
     display: block;
@@ -132,9 +288,30 @@ a {
     border: none;
     color: v.$color-btn;
     font-family: v.$second_font_family;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.66;
-    letter-spacing: 10%;
+    @include m.font_title(1rem, 1.66, 700, 10%);
+}
 
+.info {
+    &_col {
+        max-width: 470px;
+    }
+
+    &_text {
+        font-family: v.$main_font_family;
+        color: v.$color-title;
+        @include m.font_title(1.4375rem, 1.66, 400, 10%);
+
+        &_right {
+            font-family: v.$second_font_family;
+            color: v.$color_text;
+            @include m.font_title(1.1875rem, 1.68, 400, 5%);
+            &:first-of-type{
+                margin-bottom: 32px;
+            }
+        }
+    }
+
+    &_arrow {
+        margin-top: 20px;
+    }
 }
