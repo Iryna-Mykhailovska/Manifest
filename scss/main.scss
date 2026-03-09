@@ -292,6 +292,7 @@ section {
     }
 }
 
+
 .post {
     &_info {
         @include m.flex(row, space-between, center);
@@ -392,6 +393,7 @@ section {
 
         &:hover {
             background-color: v.$color_text;
+            cursor: url(../assets/img/cursor.png), pointer;
 
             & .social_icon {
                 fill: v.$color-btn;

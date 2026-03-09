@@ -406,6 +406,7 @@ section {
 }
 .social_link:hover {
   background-color: #565656;
+  cursor: url(../assets/img/cursor.png), pointer;
 }
 .social_link:hover .social_icon {
   fill: #fff;
