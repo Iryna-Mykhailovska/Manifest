@@ -74,8 +74,8 @@ a {
     padding: 0 30px;
 
     @media screen and (max-width:768px) {
-        position: absolute;
-        left: -100%;
+        position: fixed;
+        right: -100%;
         top: 65px;
         opacity: 0;
         flex-direction: column;
@@ -135,7 +135,7 @@ a {
     @media screen and (max-width:768px) {
         &:checked~.menu {
             opacity: 1;
-            left: 0;
+            right: 0;
         }
 
         &:checked~.burger__img {

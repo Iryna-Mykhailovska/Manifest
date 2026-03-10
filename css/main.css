@@ -85,8 +85,8 @@ a {
 }
 @media screen and (max-width: 768px) {
   .menu {
-    position: absolute;
-    left: -100%;
+    position: fixed;
+    right: -100%;
     top: 65px;
     opacity: 0;
     flex-direction: column;
@@ -138,7 +138,7 @@ a {
 @media screen and (max-width: 768px) {
   .burger:checked ~ .menu {
     opacity: 1;
-    left: 0;
+    right: 0;
   }
   .burger:checked ~ .burger__img {
     transform: rotate(587deg);
