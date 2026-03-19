@@ -27,7 +27,10 @@ ul {
 a {
     text-decoration: none;
 }
-
+img {
+    max-width: 100%;
+    height: auto;
+}
 .container {
     max-width: v.$container-width;
     margin: 0 auto;
@@ -47,6 +50,10 @@ a {
 .flex_container {
     @include m.flex(row, space-between, flex-start);
     gap: 30px;
+
+    @media screen and (max-width:768px) {
+        flex-wrap: wrap;
+    }
 }
 
 .header {
@@ -186,19 +193,19 @@ a {
 
 .hero {
     background: url(../assets/img/desktop/bg-image_desktop.webp) center / cover no-repeat;
-    width: 100%;
+    // width: 100%;
     height: 600px;
     padding-top: 100px;
 
     @media screen and (max-width:768px) {
-        background: url(../assets/img/tablet/bg-image_tablet.png) center / cover no-repeat;
+        background: url(../assets/img/tablet/bg-image_tablet.webp) center / cover no-repeat;
         // width: 100%;
         height: 320px;
         padding-top: 30px;
     }
 
     @media screen and (max-width:576px) {
-        background: url(../assets/img/mobile/bg-image_mobile.png) center / cover no-repeat;
+        background: url(../assets/img/mobile/bg-image_mobile.webp) center / cover no-repeat;
         // width: 100%;
         height: 500px;
         padding-top: 70px;
@@ -207,6 +214,13 @@ a {
 
 section {
     padding: 45px 0;
+
+    @media screen and (max-width:768px) {}
+
+    @media screen and (max-width:576px) {
+        padding: 35px 0;
+
+    }
 }
 
 .title {
@@ -228,7 +242,11 @@ section {
 
     &_2 {
         @include m.font_title(3rem, 1.33, 400, 5%);
+
         //48
+        @media screen and (max-width:768px) {
+            text-align: center;
+        }
     }
 
     &_3 {
@@ -249,11 +267,25 @@ section {
 
 .article {
     @include m.flex(row, flex-start, center);
+    flex-wrap: wrap;
     gap: 30px;
     padding-top: 50px;
 
+    @media screen and (max-width:768px) {
+        gap: 20px;
+    }
+
+    &_img {
+        // max-width: 570px;
+    }
+
     &_descr {
         max-width: 450px;
+
+        @media screen and (max-width:768px) {
+            max-width: 340px;
+
+        }
     }
 
     &_revers {
@@ -286,6 +318,13 @@ section {
 .heading {
     @include m.flex(row, space-between, center);
     margin-bottom: 50px;
+    flex-wrap: wrap;
+
+    @media screen and (max-width:576px) {
+        @include m.flex(column, space-between, flex-start);
+        gap: 10px;
+        margin-bottom: 30px;
+    }
 
     &__link-wrapper {
         display: flex;
@@ -296,7 +335,26 @@ section {
 
 
 .post {
-    max-width: 50%;
+    // max-width: 50%;
+
+    @media screen and (max-width:768px) {
+        @include m.flex(row, space-between, flex-start);
+
+        gap: 20px;
+        max-width: 100%;
+    }
+
+    @media screen and (max-width:576px) {
+        // max-width: 100%;
+        flex-wrap: wrap;
+    }
+
+    &_img {
+        // max-width: 370px;
+    }
+
+    &_content {}
+
     &_info {
         @include m.flex(row, space-between, center);
         padding: 25px 0;
@@ -357,6 +415,10 @@ section {
     background-color: v.$bg_footer;
     padding: 70px 0;
     color: v.$color-title;
+
+    @media screen and (max-width:576px) {
+        padding: 50px 0;
+    }
 
     &_container {
         @include m.flex(row, space-between, center);
@@ -425,8 +487,14 @@ section {
 
     &_icon {
         position: absolute;
-        top: 28%;
-        left: 28%;
+        @include m.pos_center(50%, 50%);
+
         fill: v.$color_text;
     }
+}
+.article_img, .post_img {
+    width: 100%;       /* Занимать всю ширину родителя */
+    height: auto;      /* Сохранять пропорции */
+    display: block;    /* Убрать лишние отступы снизу */
+    max-width: 570px;  /* Ограничение для десктопа остается */
 }

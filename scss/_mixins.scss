@@ -13,10 +13,10 @@
     left: $left;
 }
 
-@mixin pos_center($percent) {
-    // position: relative;
-    left: $percent;
-    transform: translateX(-1*$percent);
+@mixin pos_center($percentX, $percentY) {
+    left: $percentX;
+    top: $percentY;
+    transform: translateX(-1*$percentX) translateY(-1*$percentY);
 }
 
 @mixin font_title($font_size, $line_height, $font_weight, $letter_spacing) {

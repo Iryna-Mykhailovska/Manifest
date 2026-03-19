@@ -10,28 +10,6 @@
 
 <body>
     <header class="header">
-        <!-- <div class="container flex_container">
-            <div class="logo">
-                <svg width="142" height="12">
-                    <use xlink:href="./assets/img/svg/sprite.svg#icon-logo"></use>
-                </svg>
-            </div>
-            <nav>
-                <ul class="menu">
-                    <li class="menu_item"><a href="#" class="menu_link">home</a></li>
-                    <li class="menu_item"><a href="#" class="menu_link">about</a></li>
-                    <li class="menu_item"><a href="#" class="menu_link">works</a></li>
-                    <li class="menu_item"><a href="#" class="menu_link">blog</a></li>
-                    <li class="menu_item"><a href="#" class="menu_link">contact</a></li>
-                </ul>
-            </nav>
-            <div class="search">
-                <svg width="17" height="16">
-                    <use xlink:href="./assets/img/svg/sprite.svg#icon-search">
-
-                </svg>
-            </div>
-        </div> -->
         <div class="container">
             <div class="flex_container">
                 <div class="logo">
@@ -44,7 +22,6 @@
                 <nav class="nav">
                     <input type="checkbox" id="nav-burger" class="nav__burger burger">
                     <label for="nav-burger" class="burger__img"></label>
-
                     <ul class="menu">
                         <li class="menu__item">
                             <a href="#" class="menu__link">home</a>
@@ -67,7 +44,6 @@
                     <a href="" class="search__link">
                         <svg width="17" height="16">
                             <use xlink:href="./assets/img/svg/sprite.svg#icon-search">
-
                         </svg>
                     </a>
                 </div>
@@ -85,13 +61,12 @@
             <div class="container">
                 <h2 class="title title_2">Blog</h2>
                 <article class="article">
-                    <div class="article_img">
-                        <picture>
-                            <source srcset="./assets/img/mobile/image_mobile.png" media="(max-width: 576px)">
-                            <source srcset="./assets/img/tablet/image_tablet.png" media="(max-width: 768px)">
+                                    <picture class="article_img">
+                            <source srcset="./assets/img/mobile/image_mobile.webp" media="(max-width: 576px)">
+                            <source srcset="./assets/img/tablet/image_tablet.webp" media="(max-width: 768px)">
                             <img src="./assets/img/desktop/image_desktop.webp" alt="">
                         </picture>
-                    </div>
+
                     <div class="article_descr">
                         <h5 class="article_subtitle">Technology, Interface Design</h5>
                         <h4 class="title title_4">Using UX Design to Build a Sustainable Future</h4>
@@ -107,14 +82,11 @@
                 </article>
 
                 <article class="article article_revers">
-                    <div class="article_img">
-                        <picture>
-                            <source srcset="./assets/img/mobile/blog-image_mobile.png" media="(max-width: 576px)">
-                            <source srcset="./assets/img/tablet/blog-image_tablet.png" media="(max-width: 768px)">
+                    <picture class="article_img">
+                            <source srcset="./assets/img/mobile/blog-image_mobile.webp" media="(max-width: 576px)">
+                            <source srcset="./assets/img/tablet/blog-image_tablet.webp" media="(max-width: 768px)">
                             <img src="./assets/img/desktop/blog-image_desktop.webp" alt="">
                         </picture>
-
-                    </div>
                     <div class="article_descr">
                         <h5 class="article_subtitle">Technology, Interface Design</h5>
                         <h4 class="title title_4">Using UX Design to Build a Sustainable Future</h4>
@@ -130,7 +102,7 @@
                 </article>
             </div>
         </section>
-        <section class="posts">
+        <!-- <section class="posts">
             <div class="container">
                 <div class="heading">
                     <h3 class="title title_3">Latest Posts</h3>
@@ -143,41 +115,69 @@
                 </div>
                 <div class="flex_container">
                     <article class="post">
-                        <img src="./assets/img/desktop/post_1.webp" alt="">
-                        <div class="post_info">
-                            <span>Interface Design</span>
-                            <time datetime="2020-06-08" class="post_date">8 June, 2020</time>
+                        <div class="post_img">
+                            <picture>
+                                <source srcset="./assets/img/mobile/post_1_mobile.webp" media="(max-width: 576px)">
+                                <source srcset="./assets/img/tablet/post_1_tablet.webp" media="(max-width: 768px)">
+                                <img src="./assets/img/desktop/post_1_desktop.webp" alt="">
+                            </picture>
                         </div>
-                        <div class="post_descr">
-                            <h4 class="title title_4">UX traffic light colours</h4>
-                            <p class="post_text">UI has to make a huge visual difference between warning, an alert and a
-                                success.</p>
-                        </div>
-                    </article>
-                    <article class="post">
-                        <img src="./assets/img/desktop/post_2.webp" alt="">
-                        <div class="post_info">
-                            <span>Technology</span>
-                            <time datetime="2020-05-06" class="post_date">6 May, 2020</time>
-                        </div>
-                        <div class="post_descr">
-                            <h4 class="title title_4">Using UX Design to Build a Sustainable Future</h4>
-                            <p class="post_text">UI has to make a huge visual difference between warning, an alert and a
-                                success.</p>
+                      
+                        <div class="post_content">
+                            <div class="post_info">
+                                <span>Interface Design</span>
+                                <time datetime="2020-06-08" class="post_date">8 June, 2020</time>
+                            </div>
+                            <div class="post_descr">
+                                <h4 class="title title_4">UX traffic light colours</h4>
+                                <p class="post_text">UI has to make a huge visual difference between warning, an alert
+                                    and a
+                                    success.</p>
+                            </div>
                         </div>
                     </article>
                     <article class="post">
-                        <img src="./assets/img/desktop/post_3.webp" alt="">
-                        <div class="post_info">
-                            <span>Visual Design</span>
-                            <time datetime="2020-06-08" class="post_date">8 June, 2020</time>
+                        <div class="post_img">
+                            <picture>
+                                <source srcset="./assets/img/mobile/post_2_mobile.webp" media="(max-width: 576px)">
+                                <source srcset="./assets/img/tablet/post_2_tablet.webp" media="(max-width: 768px)">
+                                <img src="./assets/img/desktop/post_2_desktop.webp" alt="">
+                            </picture>
                         </div>
-                        <div class="post_descr">
-                            <h4 class="title title_4">Creativity vs. UX</h4>
-                            <p class="post_text">Is it possible to create a delightful user experience without following
-                                best UX
-                                practices?
-                            </p>
+                        <div class="post_content">
+                            <div class="post_info">
+                                <span>Technology</span>
+                                <time datetime="2020-05-06" class="post_date">6 May, 2020</time>
+                            </div>
+                            <div class="post_descr">
+                                <h4 class="title title_4">Using UX Design to Build a Sustainable Future</h4>
+                                <p class="post_text">UI has to make a huge visual difference between warning, an alert
+                                    and a
+                                    success.</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="post">
+                        <div class="post_img">
+                            <picture>
+                                <source srcset="./assets/img/mobile/post_3_mobile.webp" media="(max-width: 576px)">
+                                <source srcset="./assets/img/tablet/post_3_tablet.webp" media="(max-width: 768px)">
+                                <img src="./assets/img/desktop/post_3_desktop.webp" alt="">
+                            </picture>
+                        </div>
+                        <div class="post_content">
+                            <div class="post_info">
+                                <span>Visual Design</span>
+                                <time datetime="2020-06-08" class="post_date">8 June, 2020</time>
+                            </div>
+                            <div class="post_descr">
+                                <h4 class="title title_4">Creativity vs. UX</h4>
+                                <p class="post_text">Is it possible to create a delightful user experience without
+                                    following
+                                    best UX
+                                    practices?
+                                </p>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -196,32 +196,47 @@
                 </div>
                 <div class="flex_container">
                     <article class="post">
-                        <img src="./assets/img/desktop/post_popular_1.webp" alt="">
-                        <div class="post_info">
-                            <span>Interface Design</span>
-                            <time datetime="2020-06-08" class="post_date">8 June, 2020</time>
-                        </div>
-                        <div class="post_descr">
-                            <h4 class="title title_4">Mentorship Match — How a simple LinkedIn feature can boost
-                                diversity</h4>
-                            <p class="post_text">LinkedIn is on a clear mission to make professionals more successful by
-                                connecting the
-                                global
-                                workforce and as we learned — diversity and success go hand in hand</p>
+                        <picture>
+                            <source srcset="./assets/img/mobile/post_popular_1_mobile.webp" media="(max-width: 576px)">
+                            <source srcset="./assets/img/tablet/post_popular_1_tablet.webp" media="(max-width: 768px)">
+                            <img src="./assets/img/desktop/post_popular_1_desktop.webp" alt="" class="article_img">
+                        </picture>
+                        
+                        <div class="post_content">
+                            <div class="post_info">
+                                <span>Interface Design</span>
+                                <time datetime="2020-06-08" class="post_date">8 June, 2020</time>
+                            </div>
+                            <div class="post_descr">
+                                <h4 class="title title_4">Mentorship Match — How a simple LinkedIn feature can boost
+                                    diversity</h4>
+                                <p class="post_text">LinkedIn is on a clear mission to make professionals more
+                                    successful by
+                                    connecting the
+                                    global
+                                    workforce and as we learned — diversity and success go hand in hand</p>
+                            </div>
                         </div>
                     </article>
                     <article class="post">
-                        <img src="./assets/img/desktop/post_popular_2.webp" alt="">
-                        <div class="post_info">
-                            <span>Visual Design</span>
-                            <time datetime="2020-06-08" class="post_date">8 June, 2020</time>
-                        </div>
-                        <div class="post_descr">
-                            <h4 class="title title_4">Creativity vs. UX</h4>
-                            <p class="post_text">Is it possible to create a delightful user experience without following
-                                best UX
-                                practices?
-                            </p>
+                        <picture>
+                            <source srcset="./assets/img/mobile/post_popular_2_mobile.webp" media="(max-width: 576px)">
+                            <source srcset="./assets/img/tablet/post_popular_2_tablet.webp" media="(max-width: 768px)">
+                            <img src="./assets/img/desktop/post_popular_2_desktop.webp" alt=""  class="article_img">
+                        </picture>
+                                               <div class="post_content">
+                            <div class="post_info">
+                                <span>Visual Design</span>
+                                <time datetime="2020-06-08" class="post_date">8 June, 2020</time>
+                            </div>
+                            <div class="post_descr">
+                                <h4 class="title title_4">Creativity vs. UX</h4>
+                                <p class="post_text">Is it possible to create a delightful user experience without
+                                    following
+                                    best UX
+                                    practices?
+                                </p>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -292,7 +307,7 @@
             </div>
             <p class="footer_text">&copy; Copyright Manifest Theme. Allrights reserved</p>
         </div>
-    </footer>
+    </footer> -->
 </body>
 
 </html>
